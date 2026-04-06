@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import Dashboard from './components/Dashboard';
+import Transactions from './components/Transactions';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -18,6 +19,7 @@ function App() {
           {activeTab === 'dashboard' && <Dashboard />}
           {activeTab === 'transactions' && <div>Transactions View</div>}
           {activeTab === 'insights' && <div>Insights View</div>}
+          {activeTab === 'transactions' && <Transactions />}
         </main>
       </div>
     </div>
