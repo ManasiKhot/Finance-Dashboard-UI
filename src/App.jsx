@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -14,8 +15,7 @@ function App() {
         <Topbar />
         
         <main className="flex-1 overflow-y-auto p-8">
-          {/* Temporary placeholders for our views */}
-          {activeTab === 'dashboard' && <div>Dashboard Content Coming Up!</div>}
+          {activeTab === 'dashboard' && <Dashboard />}
           {activeTab === 'transactions' && <div>Transactions View</div>}
           {activeTab === 'insights' && <div>Insights View</div>}
         </main>
