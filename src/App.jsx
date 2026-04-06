@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import Dashboard from './components/Dashboard';
 import Transactions from './components/Transactions';
+import Insights from './components/Insights';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -20,6 +21,7 @@ function App() {
           {activeTab === 'transactions' && <div>Transactions View</div>}
           {activeTab === 'insights' && <div>Insights View</div>}
           {activeTab === 'transactions' && <Transactions />}
+          {activeTab === 'insights' && <Insights />}
         </main>
       </div>
     </div>
