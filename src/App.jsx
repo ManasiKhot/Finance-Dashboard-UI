@@ -1,9 +1,27 @@
+// src/App.jsx
+import { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import Topbar from './components/Topbar';
+
 function App() {
+  const [activeTab, setActiveTab] = useState('dashboard');
+
   return (
-    <div className="text-2xl font-bold text-center mt-10 text-blue-600">
-      Finance Dashboard is running! 🚀
+    <div className="flex h-screen bg-slate-50 overflow-hidden font-sans">
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      
+      <div className="flex-1 flex flex-col min-w-0">
+        <Topbar />
+        
+        <main className="flex-1 overflow-y-auto p-8">
+          {/* Temporary placeholders for our views */}
+          {activeTab === 'dashboard' && <div>Dashboard Content Coming Up!</div>}
+          {activeTab === 'transactions' && <div>Transactions View</div>}
+          {activeTab === 'insights' && <div>Insights View</div>}
+        </main>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
