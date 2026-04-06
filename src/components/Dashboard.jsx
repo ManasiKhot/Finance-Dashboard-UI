@@ -1,7 +1,8 @@
-// src/components/Dashboard.jsx
+
 import { useFinanceStore } from '../store/useFinanceStore';
 import SummaryCard from './SummaryCard';
 import { Wallet, TrendingUp, TrendingDown } from 'lucide-react';
+import DashboardCharts from './DashboardCharts';
 
 export default function Dashboard() {
   const { transactions } = useFinanceStore();
@@ -44,10 +45,10 @@ export default function Dashboard() {
       {/* Placeholder for Charts (Commit 5) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
         <div className="bg-white border border-slate-200 rounded-xl h-80 flex items-center justify-center text-slate-400">
-          Chart Space 1
+       <DashboardCharts />
         </div>
         <div className="bg-white border border-slate-200 rounded-xl h-80 flex items-center justify-center text-slate-400">
-          Chart Space 2
+          <DashboardCharts />
         </div>
       </div>
     </div>
